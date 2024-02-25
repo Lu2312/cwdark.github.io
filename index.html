@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hora y Fecha Actual</title>
+</head>
+<body>
+  <h1>Hora y Fecha Actual</h1>
+  <p id="horaFecha"></p>
+
+  <script>
+    function actualizarHoraFecha() {
+      const fecha = new Date();
+      const hora = fecha.toLocaleTimeString();
+      const fechaTexto = fecha.toLocaleDateString();
+      const elementoHoraFecha = document.getElementById("horaFecha");
+      elementoHoraFecha.textContent = `${hora} - ${fechaTexto}`;
+    }
+
+    setInterval(actualizarHoraFecha, 1000);
+    actualizarHoraFecha();
+  </script>
+</body>
+</html>
